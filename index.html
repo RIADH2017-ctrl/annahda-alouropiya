@@ -1,0 +1,1994 @@
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>النهضة الأوروبية | درس تفاعلي — المستوى الثامنة أساسي</title>
+<meta name="description" content="درس تفاعلي في مادة التاريخ: النهضة الأوروبية (القرنان 15 و16 ميلادي) — الأهداف، المفاهيم، العوامل، المظاهر والخاتمة. إعداد الأستاذ رياض سليمي.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#14212B',
+          ink2: '#1D2E3A',
+          cream: '#FBF6EC',
+          parchment: '#F2E7D3',
+          terra: '#B4522E',
+          terraDark: '#8E3C21',
+          gold: '#C4932F',
+          teal: '#14564E',
+          slate2: '#4A5B66'
+        },
+        fontFamily: {
+          display: ['Amiri', 'Georgia', 'serif'],
+          body: ['Tajawal', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Tajawal', system-ui, sans-serif;
+    background-color: #FBF6EC;
+    color: #14212B;
+    overflow-x: hidden;
+  }
+  ::selection { background: #C4932F; color: #fff; }
+
+  /* ===== Scroll progress ===== */
+  #progressBar {
+    position: fixed; top: 0; right: 0; height: 3px; width: 0%;
+    background: linear-gradient(90deg, #C4932F, #B4522E, #14564E);
+    z-index: 100; transition: width .12s linear;
+    box-shadow: 0 0 12px rgba(196,147,47,.5);
+  }
+
+  /* ===== Reveal on scroll ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .85s cubic-bezier(.22,1,.36,1), transform .85s cubic-bezier(.22,1,.36,1);
+    will-change: transform, opacity;
+  }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal-right { opacity:0; transform: translateX(38px); }
+  .reveal-right.in { opacity:1; transform:none; }
+  .reveal-left { opacity:0; transform: translateX(-38px); }
+  .reveal-left.in { opacity:1; transform:none; }
+  .reveal-scale { opacity:0; transform: scale(.94); }
+  .reveal-scale.in { opacity:1; transform:none; }
+
+  /* ===== Kinetic hero type ===== */
+  .kin-line { overflow: hidden; display: block; padding-bottom: .08em; }
+  .kin-word {
+    display: inline-block;
+    transform: translateY(112%) rotate(4deg);
+    opacity: 0;
+    transition: transform 1s cubic-bezier(.19,1,.22,1), opacity .9s ease;
+  }
+  .loaded .kin-word { transform: translateY(0) rotate(0); opacity: 1; }
+
+  /* ===== Hero light sweep ===== */
+  .sweep::after {
+    content: "";
+    position: absolute; inset: -20% -60%;
+    background: linear-gradient(115deg, transparent 38%, rgba(255,226,170,.22) 48%, rgba(255,255,255,.12) 53%, transparent 62%);
+    transform: translateX(-120%) skewX(-8deg);
+    animation: sweepMove 9s ease-in-out 1.2s infinite;
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+  @keyframes sweepMove {
+    0% { transform: translateX(-130%) skewX(-10deg); }
+    55%, 100% { transform: translateX(130%) skewX(-10deg); }
+  }
+
+  /* ===== Floating orbs (subtle, warm) ===== */
+  .orb {
+    position: absolute; border-radius: 999px; filter: blur(46px); opacity: .38;
+    animation: floaty 16s ease-in-out infinite; pointer-events: none;
+  }
+  @keyframes floaty {
+    0%,100% { transform: translate3d(0,0,0) scale(1); }
+    33% { transform: translate3d(22px,-28px,0) scale(1.08); }
+    66% { transform: translate3d(-18px,18px,0) scale(.95); }
+  }
+
+  /* ===== Marquee ===== */
+  .marquee { display: flex; width: max-content; animation: slide 38s linear infinite; }
+  .marquee:hover { animation-play-state: paused; }
+  @keyframes slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ===== Cards ===== */
+  .card-lift {
+    transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s ease, border-color .4s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 28px 55px -22px rgba(20,33,43,.32);
+    border-color: rgba(196,147,47,.55);
+  }
+
+  /* image mask reveal */
+  .img-mask { position: relative; overflow: hidden; }
+  .img-mask img {
+    transform: scale(1.18);
+    transition: transform 1.15s cubic-bezier(.22,1,.36,1), filter .6s ease;
+  }
+  .img-mask.in img { transform: scale(1); }
+  .img-mask:hover img { transform: scale(1.07); filter: saturate(1.12); }
+  .img-mask .veil {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(20,33,43,.82), rgba(20,33,43,.12) 55%, rgba(20,33,43,0));
+    pointer-events: none;
+  }
+
+  /* ===== Glossary flip ===== */
+  .flip { perspective: 1200px; }
+  .flip-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform .75s cubic-bezier(.22,1,.36,1);
+    transform-style: preserve-3d;
+  }
+  .flip:hover .flip-inner, .flip.flipped .flip-inner { transform: rotateY(180deg); }
+  .flip-face {
+    position: absolute; inset: 0;
+    backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    border-radius: 1.15rem; padding: 1.5rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .flip-back { transform: rotateY(180deg); }
+
+  /* ===== Accordion ===== */
+  .acc-panel {
+    max-height: 0; overflow: hidden; opacity: 0;
+    transition: max-height .55s cubic-bezier(.22,1,.36,1), opacity .45s ease, margin .45s ease;
+  }
+  .acc-item.open .acc-panel { max-height: 460px; opacity: 1; margin-top: .95rem; }
+  .acc-item.open .acc-icon { transform: rotate(45deg); background: #B4522E; color: #fff; }
+  .acc-item { transition: background-color .4s ease, border-color .4s ease; }
+  .acc-item.open { background: #fff; border-color: rgba(180,82,46,.4); }
+
+  /* ===== Timeline ===== */
+  .tl-track {
+    position: absolute; top: 0; bottom: 0; width: 3px;
+    background: rgba(20,33,43,.12); border-radius: 99px;
+  }
+  .tl-fill {
+    position: absolute; top: 0; width: 3px; border-radius: 99px;
+    background: linear-gradient(to bottom, #C4932F, #B4522E, #14564E);
+    height: 0%;
+  }
+  .tl-dot {
+    transition: transform .5s cubic-bezier(.22,1,.36,1), background-color .4s ease, box-shadow .4s ease;
+  }
+  .tl-item:hover .tl-dot {
+    transform: scale(1.35);
+    background: #B4522E;
+    box-shadow: 0 0 0 8px rgba(180,82,46,.16);
+  }
+
+  /* ===== Chart bars ===== */
+  .bar-track { background: rgba(20,33,43,.09); border-radius: 99px; overflow: hidden; }
+  .bar-fill {
+    height: 100%; width: 0;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #14564E, #C4932F);
+    transition: width 1.35s cubic-bezier(.22,1,.36,1);
+    position: relative;
+  }
+  .bar-fill::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+    transform: translateX(-100%);
+    animation: barShine 3.2s ease-in-out infinite;
+  }
+  @keyframes barShine {
+    0% { transform: translateX(-110%); }
+    60%,100% { transform: translateX(110%); }
+  }
+
+  /* ===== Magnetic buttons ===== */
+  .magnetic {
+    transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, background-color .35s ease, color .35s ease;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #B4522E, #8E3C21);
+    color: #fff;
+    box-shadow: 0 18px 38px -16px rgba(142,60,33,.7);
+  }
+  .btn-primary:hover { box-shadow: 0 26px 52px -18px rgba(142,60,33,.8); }
+
+  /* ===== Nav underline ===== */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: ""; position: absolute; bottom: -6px; right: 0;
+    width: 0; height: 2px; background: #B4522E;
+    transition: width .38s cubic-bezier(.22,1,.36,1);
+  }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+  /* ===== Quiz ===== */
+  .quiz-opt {
+    transition: all .32s cubic-bezier(.22,1,.36,1);
+    cursor: pointer;
+  }
+  .quiz-opt:hover { transform: translateX(-6px); border-color: #C4932F; background: #fff; }
+  .quiz-opt.correct {
+    background: linear-gradient(135deg, #14564E, #1B7266);
+    color: #fff; border-color: transparent; transform: translateX(-6px) scale(1.015);
+    box-shadow: 0 18px 38px -18px rgba(20,86,78,.75);
+  }
+  .quiz-opt.wrong {
+    background: #F6E2DA; border-color: #B4522E; color: #8E3C21;
+  }
+
+  /* ===== Section heading ornament ===== */
+  .ornament-line {
+    height: 2px; width: 0;
+    background: linear-gradient(90deg, #C4932F, rgba(196,147,47,0));
+    transition: width 1s cubic-bezier(.22,1,.36,1);
+  }
+  .in .ornament-line, .ornament-wrap.in .ornament-line { width: 100%; }
+
+  .path-draw path {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    transition: stroke-dashoffset 1.8s cubic-bezier(.22,1,.36,1);
+  }
+  .path-draw.in path { stroke-dashoffset: 0; }
+
+  .grain {
+    position: absolute; inset: 0; opacity: .055; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .stat-number { font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+
+  /* mobile menu */
+  #mobileMenu {
+    max-height: 0; overflow: hidden;
+    transition: max-height .5s cubic-bezier(.22,1,.36,1), opacity .35s ease;
+    opacity: 0;
+  }
+  #mobileMenu.open { max-height: 420px; opacity: 1; }
+
+  .badge-soft {
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.22);
+    backdrop-filter: blur(6px);
+  }
+
+  .parallax-img { will-change: transform; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .18s !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal, .reveal-right, .reveal-left, .reveal-scale, .kin-word {
+      opacity: 1 !important; transform: none !important;
+    }
+    .img-mask img { transform: none !important; }
+  }
+</style>
+</head>
+<body class="font-body antialiased">
+
+<div id="progressBar"></div>
+
+<!-- ================= HEADER ================= -->
+<header id="siteHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-[72px]">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-terra to-terraDark flex items-center justify-center shadow-lg shadow-terra/25 overflow-hidden">
+          <svg viewBox="0 0 40 40" class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="20" cy="20" r="12" opacity=".55"/>
+            <path d="M20 6v28M6 20h28" stroke-linecap="round" opacity=".85"/>
+            <path d="M20 12l4 8-4 8-4-8z" fill="currentColor" stroke="none" opacity=".95"/>
+          </svg>
+        </div>
+        <div class="leading-tight">
+          <div class="font-display text-lg sm:text-xl font-bold text-ink" id="brandTitle">النهضة الأوروبية</div>
+          <div class="text-[11px] sm:text-xs text-slate2 tracking-wide" id="brandSub">مادة التاريخ • المستوى الثامنة أساسي</div>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium">
+        <a href="#objectives" class="nav-link text-ink/80 hover:text-terra transition-colors">الأهداف</a>
+        <a href="#intro" class="nav-link text-ink/80 hover:text-terra transition-colors">المقدمة والإشكالية</a>
+        <a href="#concepts" class="nav-link text-ink/80 hover:text-terra transition-colors">المفاهيم</a>
+        <a href="#factors" class="nav-link text-ink/80 hover:text-terra transition-colors">العوامل</a>
+        <a href="#timeline" class="nav-link text-ink/80 hover:text-terra transition-colors">خط زمني</a>
+        <a href="#features" class="nav-link text-ink/80 hover:text-terra transition-colors">المظاهر</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#quiz" class="magnetic btn-primary hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold">
+          اختبر معلوماتك
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M19 12H5M11 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <button id="menuBtn" aria-label="القائمة" class="lg:hidden w-11 h-11 rounded-full border border-ink/15 flex items-center justify-center bg-white/70">
+          <svg class="w-5 h-5 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="lg:hidden px-4 sm:px-6">
+    <div class="bg-white rounded-2xl shadow-xl border border-ink/10 p-4 space-y-1">
+      <a href="#objectives" class="mobile-link block px-4 py-3 rounded-xl hover:bg-parchment/70 font-medium">الأهداف</a>
+      <a href="#intro" class="mobile-link block px-4 py-3 rounded-xl hover:bg-parchment/70 font-medium">المقدمة والإشكالية</a>
+      <a href="#concepts" class="mobile-link block px-4 py-3 rounded-xl hover:bg-parchment/70 font-medium">المفاهيم</a>
+      <a href="#factors" class="mobile-link block px-4 py-3 rounded-xl hover:bg-parchment/70 font-medium">عوامل النهضة</a>
+      <a href="#timeline" class="mobile-link block px-4 py-3 rounded-xl hover:bg-parchment/70 font-medium">خط زمني</a>
+      <a href="#features" class="mobile-link block px-4 py-3 rounded-xl hover:bg-parchment/70 font-medium">المظاهر</a>
+      <a href="#quiz" class="mobile-link block px-4 py-3 rounded-xl bg-terra text-white font-bold text-center">اختبر معلوماتك</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="hero" class="relative min-h-[100svh] flex items-center overflow-hidden bg-ink">
+  <!-- Background image -->
+  <div class="absolute inset-0">
+    <img
+      src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=2000&q=80"
+      alt="عمارة كلاسيكية أوروبية"
+      class="parallax-img w-full h-full object-cover opacity-[.42]"
+      data-speed="0.12"
+      onerror="this.style.display='none'">
+    <div class="absolute inset-0 bg-gradient-to-l from-ink via-ink/85 to-ink/55"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/70"></div>
+    <div class="grain"></div>
+    <!-- warm orbs -->
+    <div class="orb w-[380px] h-[380px] bg-[#B4522E] top-[-90px] left-[-70px]"></div>
+    <div class="orb w-[320px] h-[320px] bg-[#C4932F] bottom-[-110px] right-[8%]" style="animation-delay:-6s"></div>
+    <div class="orb w-[260px] h-[260px] bg-[#14564E] top-[35%] right-[-90px]" style="animation-delay:-11s"></div>
+  </div>
+
+  <!-- decorative arches -->
+  <svg class="absolute left-0 bottom-0 h-[70%] w-auto opacity-[.14] hidden md:block" viewBox="0 0 300 500" fill="none" stroke="#E9C88A" stroke-width="1.2">
+    <path d="M40 500V180a90 90 0 01180 0v320" />
+    <path d="M90 500V190a40 40 0 0180 0v310" />
+    <path d="M10 500V220a120 120 0 01240 0v280" opacity=".55"/>
+  </svg>
+
+  <div class="relative z-10 w-full">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-36 lg:pb-28">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-7">
+          <div class="flex flex-wrap items-center gap-2.5 mb-7 hero-anim">
+            <span class="badge-soft text-parchment/90 text-xs sm:text-sm px-4 py-2 rounded-full">مادة التاريخ • الجمهورية التونسية</span>
+            <span class="badge-soft text-parchment/90 text-xs sm:text-sm px-4 py-2 rounded-full">السنة الدراسية 2026 / 2027</span>
+          </div>
+
+          <h1 class="font-display text-white font-bold leading-[1.12] text-[clamp(2.55rem,7.4vw,5.4rem)]">
+            <span class="kin-line"><span class="kin-word" style="transition-delay:.15s">النهضةُ</span> <span class="kin-word text-[#E7BE72]" style="transition-delay:.27s">الأوروبيّة</span></span>
+            <span class="kin-line"><span class="kin-word text-[clamp(1.25rem,3.2vw,2.15rem)] text-parchment/85 font-normal" style="transition-delay:.42s">من جمودِ العصور الوسيطة إلى ولادةِ الحداثة</span></span>
+          </h1>
+
+          <p class="mt-7 text-parchment/80 text-base sm:text-lg lg:text-xl leading-[2.1] max-w-2xl hero-anim">
+            حركةُ تجديدٍ شاملةٌ مسّت الفكرَ والفنَّ والدينَ والعلم،
+            قطعت مع هيمنة الكنيسة والنظام الإطباقي، وأرست أسس الفكر الحديث في أوروبا
+            بين القرنَي الخامس عشر والسادس عشر ميلادي.
+          </p>
+
+          <div class="mt-9 flex flex-wrap items-center gap-4 hero-anim">
+            <a href="#objectives" class="magnetic btn-primary inline-flex items-center gap-2.5 px-7 py-4 rounded-full font-bold text-[15px]">
+              ابدأ الدرس
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#concepts" class="magnetic inline-flex items-center gap-2.5 px-7 py-4 rounded-full font-bold text-[15px] text-white border border-white/25 hover:bg-white/10">
+              <svg class="w-5 h-5 text-[#E7BE72]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 5.5A1.5 1.5 0 015.5 4H11v16H5.5A1.5 1.5 0 014 18.5v-13zM20 5.5A1.5 1.5 0 0018.5 4H13v16h5.5a1.5 1.5 0 001.5-1.5v-13z" stroke-linejoin="round"/>
+              </svg>
+              المفاهيم الأساسية
+            </a>
+          </div>
+
+          <!-- teacher strip -->
+          <div class="mt-10 flex items-center gap-4 hero-anim">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold to-terra flex items-center justify-center text-white font-display text-lg shadow-lg">ر</div>
+            <div>
+              <div class="text-white font-bold text-[15px]">إعداد الأستاذ: رياض سليمي</div>
+              <div class="text-parchment/60 text-[13px]">وفق برنامج مادة التاريخ — وزارة التربية بالجمهورية التونسية</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero side panel -->
+        <div class="lg:col-span-5 hero-anim">
+          <div class="relative">
+            <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#E7BE72]/25 to-transparent blur-2xl"></div>
+            <div class="relative rounded-[1.75rem] overflow-hidden border border-white/15 shadow-2xl sweep">
+              <img
+                src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1000&q=80"
+                alt="العمارة الأوروبية في عصر النهضة"
+                class="w-full h-[330px] sm:h-[420px] object-cover"
+                onerror="this.parentElement.style.background='linear-gradient(135deg,#8E3C21,#14212B)';this.style.display='none'">
+              <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-ink via-ink/70 to-transparent">
+                <div class="text-[#E7BE72] text-xs font-bold tracking-[.22em] mb-2">RENAISSANCE</div>
+                <div class="text-white font-display text-xl sm:text-2xl leading-relaxed">
+                  «عودةُ أوروبا إلى العقل، إلى الإنسان، وإلى الجمال»
+                </div>
+              </div>
+            </div>
+
+            <!-- floating mini stats -->
+            <div class="absolute -right-4 sm:-right-8 top-8 bg-white rounded-2xl px-5 py-4 shadow-xl border border-white/60 hidden sm:block">
+              <div class="stat-number text-terra font-display text-2xl font-bold" data-count="1450" data-suffix=" م">0</div>
+              <div class="text-slate2 text-xs mt-1">بداية عصر النهضة</div>
+            </div>
+            <div class="absolute -left-4 sm:-left-6 bottom-10 bg-teal text-white rounded-2xl px-5 py-4 shadow-xl">
+              <div class="stat-number font-display text-2xl font-bold" data-count="1455" data-suffix="">0</div>
+              <div class="text-white/75 text-xs mt-1">اختراع آلة الطباعة</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- scroll cue -->
+  <a href="#objectives" class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/55 hover:text-white transition-colors">
+    <span class="text-[11px] tracking-[.25em]">مرّر للأسفل</span>
+    <div class="w-[26px] h-[42px] rounded-full border border-white/30 flex justify-center pt-2">
+      <div class="w-1.5 h-2.5 rounded-full bg-[#E7BE72]" style="animation: scrollDot 1.8s ease-in-out infinite"></div>
+    </div>
+  </a>
+  <style>
+    @keyframes scrollDot {
+      0% { transform: translateY(0); opacity: 1; }
+      70% { transform: translateY(14px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 0; }
+    }
+  </style>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="bg-terra text-white py-4 overflow-hidden border-y border-white/10" dir="ltr">
+  <div class="marquee">
+    <div class="flex items-center gap-10 px-5 whitespace-nowrap">
+      <span class="font-display text-lg sm:text-xl">الإنسان</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">العقل</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الحرية</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">العلم</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الفن</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الميسان</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الطباعة</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الإصلاح الديني</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الإنسانية</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">كوبرنيك</span><span class="opacity-40">◆</span>
+    </div>
+    <div class="flex items-center gap-10 px-5 whitespace-nowrap" aria-hidden="true">
+      <span class="font-display text-lg sm:text-xl">الإنسان</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">العقل</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الحرية</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">العلم</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الفن</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الميسان</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الطباعة</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الإصلاح الديني</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">الإنسانية</span><span class="opacity-40">◆</span>
+      <span class="font-display text-lg sm:text-xl">كوبرنيك</span><span class="opacity-40">◆</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= OBJECTIVES ================= -->
+<section id="objectives" class="relative py-20 sm:py-28 bg-cream overflow-hidden">
+  <div class="orb w-[340px] h-[340px] bg-[#E7BE72] top-[-80px] right-[-100px] opacity-25"></div>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+
+    <div class="max-w-3xl reveal">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-[2px] bg-terra"></span>
+        <span class="text-terra font-bold tracking-[.18em] text-xs sm:text-sm">الأهداف البيداغوجية</span>
+      </div>
+      <h2 class="font-display text-[clamp(2rem,5vw,3.35rem)] font-bold text-ink leading-[1.35]">
+        أهدافُ الدرس: معرفية، مهارية، وسلوكية
+      </h2>
+      <div class="ornament-wrap mt-6 max-w-md">
+        <div class="ornament-line"></div>
+      </div>
+      <p class="mt-6 text-slate2 text-lg leading-[2.15]">
+        صُمِّم هذا الدرس ليُكسِب المتعلّم معرفةً تاريخيةً منظّمة، ومهاراتَ تفكيرٍ ناقد،
+        وسلوكاً إيجابياً يُقدّر فيه دورَ الحوار الحضاري والتجديد.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-7 mt-14">
+
+      <!-- Card 1 -->
+      <div class="reveal card-lift bg-white rounded-[1.5rem] p-8 border border-ink/[.07] shadow-[0_20px_50px_-30px_rgba(20,33,43,.4)]">
+        <div class="w-14 h-14 rounded-2xl bg-teal/10 text-teal flex items-center justify-center mb-6">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 3l9 4.5-9 4.5-9-4.5L12 3z" stroke-linejoin="round"/>
+            <path d="M5.5 10v4.2c0 1.8 2.9 3.3 6.5 3.3s6.5-1.5 6.5-3.3V10" stroke-linecap="round"/>
+            <path d="M20.5 8v5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-2xl font-bold text-ink mb-2">الأهداف المعرفية</h3>
+        <p class="text-slate2 text-[15px] leading-[2] mb-5">أن يُتمكّن المتعلّم من:</p>
+        <ul class="space-y-3.5">
+          <li class="flex items-start gap-3 text-[15px] text-ink/80">
+            <svg class="w-5 h-5 text-teal shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            تحديدُ مفهوم النهضة الأوروبية وتحديدُ إطارها الزماني (القرنان 15 و16 م).
+          </li>
+          <li class="flex items-start gap-3 text-[15px] text-ink/80">
+            <svg class="w-5 h-5 text-teal shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            تعدادُ عوامل ظهور النهضة وتفسيرُ كلٍّ منها.
+          </li>
+          <li class="flex items-start gap-3 text-[15px] text-ink/80">
+            <svg class="w-5 h-5 text-teal shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            التعرّف إلى أبرز مظاهر النهضة الفكرية والفنية والعلمية والدينية.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="reveal card-lift bg-ink text-white rounded-[1.5rem] p-8 shadow-[0_30px_60px_-28px_rgba(20,33,43,.75)] relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[.16]">
+          <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=80" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <div class="relative">
+          <div class="w-14 h-14 rounded-2xl bg-white/10 text-[#E7BE72] flex items-center justify-center mb-6">
+            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M9 18h6M10 21h4" stroke-linecap="round"/>
+              <path d="M12 3a6 6 0 00-3.6 10.8c.6.5.9 1.2.9 1.9v.3h5.4v-.3c0-.7.3-1.4.9-1.9A6 6 0 0012 3z" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-2">الأهداف المهارية</h3>
+          <p class="text-white/70 text-[15px] leading-[2] mb-5">أن يُحسِن المتعلّم:</p>
+          <ul class="space-y-3.5">
+            <li class="flex items-start gap-3 text-[15px] text-white/85">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#E7BE72] mt-2.5 shrink-0"></span>
+              قراءةَ النصوص التاريخية وتحليلَها واستخراجَ الأفكار الأساسية.
+            </li>
+            <li class="flex items-start gap-3 text-[15px] text-white/85">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#E7BE72] mt-2.5 shrink-0"></span>
+              توظيفَ الخرائط المصوّرة والمخطّطات والخطّ الزمني.
+            </li>
+            <li class="flex items-start gap-3 text-[15px] text-white/85">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#E7BE72] mt-2.5 shrink-0"></span>
+              إنجازَ ملخّصاتٍ منظّمة ومقارنةَ المراحل التاريخية ببعضها.
+            </li>
+            <li class="flex items-start gap-3 text-[15px] text-white/85">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#E7BE72] mt-2.5 shrink-0"></span>
+              التعبيرَ الشفوي والكتابي بلغةٍ تاريخية سليمة.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="reveal card-lift bg-white rounded-[1.5rem] p-8 border border-ink/[.07] shadow-[0_20px_50px_-30px_rgba(20,33,43,.4)]">
+        <div class="w-14 h-14 rounded-2xl bg-terra/10 text-terra flex items-center justify-center mb-6">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 21s-7.5-4.4-7.5-10A4.2 4.2 0 0112 8.2 4.2 4.2 0 0119.5 11c0 5.6-7.5 10-7.5 10z" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-2xl font-bold text-ink mb-2">الأهداف السلوكية</h3>
+        <p class="text-slate2 text-[15px] leading-[2] mb-5">أن يُرسِّخ المتعلّم قيَم:</p>
+        <ul class="space-y-3.5">
+          <li class="flex items-start gap-3 text-[15px] text-ink/80">
+            <svg class="w-5 h-5 text-terra shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            احترامُ الحوار الحضاري والانفتاحُ المثمر على الثقافات الأخرى.
+          </li>
+          <li class="flex items-start gap-3 text-[15px] text-ink/80">
+            <svg class="w-5 h-5 text-terra shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            تقديرُ دور العلم والمعرفة في تقدّم المجتمعات ونهضتها.
+          </li>
+          <li class="flex items-start gap-3 text-[15px] text-ink/80">
+            <svg class="w-5 h-5 text-terra shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            تنميةُ روح النقد والتشبّث بالحرية الفكرية والمسؤولية.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= INTRO & PROBLEMATIQUE ================= -->
+<section id="intro" class="relative py-20 sm:py-28 bg-white overflow-hidden">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+
+      <!-- Images collage -->
+      <div class="relative order-2 lg:order-1">
+        <div class="grid grid-cols-2 gap-5">
+          <div class="img-mask reveal rounded-[1.4rem] overflow-hidden shadow-xl h-[240px] sm:h-[320px]">
+            <img src="https://images.unsplash.com/photo-1491156855053-9cdff72c7f85?auto=format&fit=crop&w=800&q=80" alt="مخطّطات وكتب قديمة" class="w-full h-full object-cover" onerror="this.parentElement.style.background='linear-gradient(135deg,#B4522E,#8E3C21)';this.style.display='none'">
+            <div class="veil"></div>
+            <div class="absolute bottom-4 right-4 text-white font-display text-lg">العصور الوسيطة</div>
+          </div>
+          <div class="img-mask reveal rounded-[1.4rem] overflow-hidden shadow-xl h-[240px] sm:h-[320px] mt-10">
+            <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80" alt="عمارة أوروبية" class="w-full h-full object-cover" onerror="this.parentElement.style.background='linear-gradient(135deg,#14564E,#14212B)';this.style.display='none'">
+            <div class="veil"></div>
+            <div class="absolute bottom-4 right-4 text-white font-display text-lg">عصر النهضة</div>
+          </div>
+        </div>
+
+        <!-- floating quote -->
+        <div class="reveal-scale absolute -bottom-8 right-4 sm:right-10 bg-ink text-white rounded-2xl px-6 py-5 shadow-2xl max-w-[290px]">
+          <svg class="w-8 h-8 text-gold mb-2 opacity-80" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9.6 6.2C6.5 7.7 4.4 10.8 4.4 14c0 3 1.9 5 4.3 5 2.1 0 3.8-1.6 3.8-3.7 0-2-1.5-3.6-3.5-3.6-.4 0-.9.1-1 .1.5-1.9 2-3.5 3.8-4.5l-2.2-1.1zm9 0c-3.1 1.5-5.2 4.6-5.2 7.8 0 3 1.9 5 4.3 5 2.1 0 3.8-1.6 3.8-3.7 0-2-1.5-3.6-3.5-3.6-.4 0-.9.1-1 .1.5-1.9 2-3.5 3.8-4.5l-2.2-1.1z"/>
+          </svg>
+          <div class="text-[14px] leading-[1.95] text-white/85">
+            هيمنةٌ مطلقة للكنيسة الكاثوليكية، ورقابةٌ صارمة على العقول، ونظامٌ إطباقيٌ متخلف…
+            إلى أن انبعثت أوروبا من ركام تخلّفها.
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="order-1 lg:order-2">
+        <div class="reveal flex items-center gap-3 mb-4">
+          <span class="w-10 h-[2px] bg-terra"></span>
+          <span class="text-terra font-bold tracking-[.18em] text-xs sm:text-sm">المقدمة</span>
+        </div>
+
+        <h2 class="reveal font-display text-[clamp(1.95rem,4.6vw,3.15rem)] font-bold text-ink leading-[1.45]">
+          من جمودِ القرون الوسطى… إلى انبعاثِ الحداثة
+        </h2>
+
+        <p class="reveal mt-6 text-slate2 text-[17px] leading-[2.25]">
+          شهدت القارةُ الأوروبية طيلةَ العصور الوسيطة (من القرن الخامس إلى القرن الخامس عشر ميلادي)
+          جموداً فكرياً واقتصادياً، وهيمنةً مطلقةً للكنيسة الكاثوليكية التي فرضت رقابةً صارمةً على العقول،
+          متزامنةً مع نظامٍ إطباقيٍّ متخلف.
+        </p>
+
+        <p class="reveal mt-5 text-slate2 text-[17px] leading-[2.25]">
+          غير أنّ هذه الصورةَ بدأت تتغيّر جذرياً مع اطّلال القرنَي الخامس عشر والسادس عشر ميلادي،
+          حيث انبعثت أوروبا من ركام تخلّفها لتؤسّس لحقبةٍ جديدةٍ عُرفت بـ
+          <span class="font-bold text-terra bg-terra/[.08] px-2 py-0.5 rounded-lg">عصر النهضة (Renaissance)</span>
+          وهي حركةُ تجديدٍ شاملةٌ مسّت الفكرَ والفنَّ والدينَ والعلم، وأسّست للحداثة الغربية.
+        </p>
+
+        <!-- Problematique box -->
+        <div class="reveal mt-9 relative">
+          <div class="absolute -inset-px rounded-[1.4rem] bg-gradient-to-l from-gold via-terra to-teal opacity-70"></div>
+          <div class="relative bg-cream rounded-[1.4rem] p-7 sm:p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-11 h-11 rounded-full bg-terra text-white flex items-center justify-center">
+                <svg class="w-5.5 h-5.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9.2 9a2.9 2.9 0 015.6 1c0 1.9-2.8 2.5-2.8 4.2" stroke-linecap="round"/>
+                  <circle cx="12" cy="18" r="1.15" fill="currentColor" stroke="none"/>
+                  <circle cx="12" cy="12" r="9.2" opacity=".38"/>
+                </svg>
+              </div>
+              <h3 class="font-display text-xl sm:text-2xl font-bold text-ink">الإشكالية البيداغوجية</h3>
+            </div>
+            <p class="text-ink/85 text-[16px] leading-[2.15] font-medium">
+              فما هي العواملُ والظروفُ المتعدّدة التي أدّت إلى ظهور النهضة الأوروبية؟
+              وما هي أبرزُ مظاهرها الفكرية والعلمية والدينية التي قطعت مع العصور الوسطى؟
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2.5">
+              <span class="px-4 py-2 rounded-full bg-white border border-ink/10 text-[13px] font-semibold text-ink/75">العوامل الاقتصادية</span>
+              <span class="px-4 py-2 rounded-full bg-white border border-ink/10 text-[13px] font-semibold text-ink/75">العوامل السياسية</span>
+              <span class="px-4 py-2 rounded-full bg-white border border-ink/10 text-[13px] font-semibold text-ink/75">العوامل الثقافية</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONCEPTS ================= -->
+<section id="concepts" class="relative py-20 sm:py-28 bg-ink text-white overflow-hidden">
+  <div class="absolute inset-0 opacity-[.14]">
+    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=1800&q=80" alt="" class="w-full h-full object-cover parallax-img" data-speed="0.07" onerror="this.style.display='none'">
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/92 to-ink"></div>
+  </div>
+  <div class="grain"></div>
+
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl reveal">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-[2px] bg-gold"></span>
+        <span class="text-gold font-bold tracking-[.18em] text-xs sm:text-sm">شرح المفاهيم</span>
+      </div>
+      <h2 class="font-display text-[clamp(2rem,5vw,3.35rem)] font-bold leading-[1.35]">
+        المفاهيمُ الأساسية للدرس
+      </h2>
+      <p class="mt-6 text-white/70 text-lg leading-[2.15]">
+        مرّر المؤشّر فوق البطاقة (أو اضغط عليها في الهاتف) لقراءة التعريف.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+
+      <div class="flip reveal h-[212px] cursor-pointer">
+        <div class="flip-inner">
+          <div class="flip-face bg-white/[.07] border border-white/12">
+            <div class="w-11 h-11 rounded-xl bg-gold/20 text-gold flex items-center justify-center mb-4">
+              <svg class="w-5.5 h-5.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3v18M3 12h18" stroke-linecap="round"/><circle cx="12" cy="12" r="8.5" opacity=".5"/></svg>
+            </div>
+            <h3 class="font-display text-2xl font-bold">النهضة (Renaissance)</h3>
+            <p class="text-white/55 text-sm mt-2">حرّك المؤشّر لقراءة التعريف</p>
+          </div>
+          <div class="flip-face flip-back bg-gradient-to-br from-gold to-[#A9762A] text-ink">
+            <p class="leading-[2.1] text-[15px] font-medium">
+              حركةُ تجديدٍ ثقافيٍّ وفكريٍّ وفنيٍّ شاملة ظهرت في أوروبا بين القرنَي 15 و16 ميلادي،
+              تقوم على إحياء التراث الكلاسيكي (اليوناني والروماني) وإعلاء قيمة الإنسان والعقل والعلم.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip reveal h-[212px] cursor-pointer">
+        <div class="flip-inner">
+          <div class="flip-face bg-white/[.07] border border-white/12">
+            <div class="w-11 h-11 rounded-xl bg-terra/25 text-[#E9A98D] flex items-center justify-center mb-4">
+              <svg class="w-5.5 h-5.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-display text-2xl font-bold">الحركة الإنسانية</h3>
+            <p class="text-white/55 text-sm mt-2">Humanisme</p>
+          </div>
+          <div class="flip-face flip-back bg-gradient-to-br from-terra to-terraDark text-white">
+            <p class="leading-[2.1] text-[15px] font-medium">
+              تيارٌ فكريٌّ جديد يضع الإنسانَ في مركز الاهتمام، ويُقدّس العقلَ والعلمَ والأدبَ
+              بدلَ التفسير الديني المطلق للعالم، داعياً إلى الحرية والجمال والبحث عن الحقيقة.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip reveal h-[212px] cursor-pointer">
+        <div class="flip-inner">
+          <div class="flip-face bg-white/[.07] border border-white/12">
+            <div class="w-11 h-11 rounded-xl bg-teal/30 text-[#8FD4C8] flex items-center justify-center mb-4">
+              <svg class="w-5.5 h-5.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3.5" y="5" width="17" height="12" rx="2"/><path d="M7 20h10M7 9h6M7 12.5h4" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-display text-2xl font-bold">الميسان (Mécènes)</h3>
+            <p class="text-white/55 text-sm mt-2">رعاة الفنون والآداب</p>
+          </div>
+          <div class="flip-face flip-back bg-gradient-to-br from-teal to-[#0D3B36] text-white">
+            <p class="leading-[2.1] text-[15px] font-medium">
+              حكّامٌ وأمراءٌ وأثرياء وظّفوا أموالَهم الطائلة في رعاية الأدباء والفنانين والعلماء،
+              ودعمِ الإنتاج الفكري والفني، وكان لهم دورٌ محوريٌّ في انتشار حركة النهضة.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip reveal h-[212px] cursor-pointer">
+        <div class="flip-inner">
+          <div class="flip-face bg-white/[.07] border border-white/12">
+            <div class="w-11 h-11 rounded-xl bg-white/12 text-white/85 flex items-center justify-center mb-4">
+              <svg class="w-5.5 h-5.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="4" width="16" height="16" rx="2.2"/><path d="M8 8h8M8 12h8M8 16h4.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-display text-2xl font-bold">آلة الطباعة</h3>
+            <p class="text-white/55 text-sm mt-2">اختراع غوتنبرغ — 1455م</p>
+          </div>
+          <div class="flip-face flip-back bg-gradient-to-br from-[#3B4B57] to-[#20303B] text-white">
+            <p class="leading-[2.1] text-[15px] font-medium">
+              وسيلةُ نسخٍ ونشرٍ ميكانيكية للنصوص، شكّلت ثورةً تواصليةً كبرى:
+              سرّعت انتشارَ المعرفة، وحطّمت احتكارَ الكنيسة للقراءة والكتابة، وجعلت الكتابَ في متناول الجميع.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip reveal h-[212px] cursor-pointer">
+        <div class="flip-inner">
+          <div class="flip-face bg-white/[.07] border border-white/12">
+            <div class="w-11 h-11 rounded-xl bg-gold/20 text-gold flex items-center justify-center mb-4">
+              <svg class="w-5.5 h-5.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8"/><path d="M12 4c2.6 2.4 2.6 13.2 0 16M12 4c-2.6 2.4-2.6 13.2 0 16M4.2 9.5h15.6M4.2 14.5h15.6" opacity=".75"/></svg>
+            </div>
+            <h3 class="font-display text-2xl font-bold">الإصلاح الديني</h3>
+            <p class="text-white/55 text-sm mt-2">Réforme religieuse</p>
+          </div>
+          <div class="flip-face flip-back bg-gradient-to-br from-[#7C2F2A] to-[#4B1B18] text-white">
+            <p class="leading-[2.1] text-[15px] font-medium">
+              حركةٌ دينيةٌ وسياسيةٌ ظهرت في أوروبا في القرن 16م، انتقدت ممارسات الكنيسة الكاثوليكية
+              وأفضت إلى ظهور التيار البروتستانتي وانقسام المشهد الديني الأوروبي.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip reveal h-[212px] cursor-pointer">
+        <div class="flip-inner">
+          <div class="flip-face bg-white/[.07] border border-white/12">
+            <div class="w-11 h-11 rounded-xl bg-terra/25 text-[#E9A98D] flex items-center justify-center mb-4">
+              <svg class="w-5.5 h-5.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="9.2" ry="4.2" transform="rotate(-22 12 12)"/></svg>
+            </div>
+            <h3 class="font-display text-2xl font-bold">الكلاسيكيات</h3>
+            <p class="text-white/55 text-sm mt-2">اليونان ورومانيا القديمتان</p>
+          </div>
+          <div class="flip-face flip-back bg-gradient-to-br from-[#8E3C21] to-[#5B2416] text-white">
+            <p class="leading-[2.1] text-[15px] font-medium">
+              التراثُ الفكري والعلمي والفني للحضارة اليونانية والرومانية، القائم على إعلاء العقل
+              وقيم الحرية والجمال، والذي استلهمه مفكّرو النهضة تجاوزاً لجمود العصور الوسطى.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FACTORS ================= -->
+<section id="factors" class="relative py-20 sm:py-28 bg-cream overflow-hidden">
+  <div class="orb w-[420px] h-[420px] bg-[#E7BE72] bottom-[-140px] left-[-120px] opacity-[.22]"></div>
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+      <div class="max-w-2xl reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-10 h-[2px] bg-terra"></span>
+          <span class="text-terra font-bold tracking-[.18em] text-xs sm:text-sm">العنصر الأول</span>
+        </div>
+        <h2 class="font-display text-[clamp(2rem,5vw,3.35rem)] font-bold text-ink leading-[1.35]">
+          عواملُ ظهور النهضة الأوروبية
+        </h2>
+        <div class="ornament-wrap mt-6 max-w-sm"><div class="ornament-line"></div></div>
+        <p class="mt-6 text-slate2 text-lg leading-[2.15]">
+          لم تكن النهضة وليدةَ الصدفة، بل كانت ثمرةَ تداخلِ عواملَ اقتصاديةٍ وسياسيةٍ وثقافيةٍ عميقةً ومتكاملة.
+        </p>
+      </div>
+
+      <!-- mini legend -->
+      <div class="reveal flex flex-wrap gap-3">
+        <div class="flex items-center gap-2.5 bg-white rounded-full px-5 py-3 border border-ink/[.07] shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-terra"></span>
+          <span class="text-sm font-semibold text-ink/80">عوامل اقتصادية</span>
+        </div>
+        <div class="flex items-center gap-2.5 bg-white rounded-full px-5 py-3 border border-ink/[.07] shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-gold"></span>
+          <span class="text-sm font-semibold text-ink/80">عوامل سياسية</span>
+        </div>
+        <div class="flex items-center gap-2.5 bg-white rounded-full px-5 py-3 border border-ink/[.07] shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-teal"></span>
+          <span class="text-sm font-semibold text-ink/80">عوامل ثقافية</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion / cards -->
+    <div class="mt-12 space-y-4">
+
+      <!-- 1 -->
+      <div class="acc-item reveal bg-white/70 border border-ink/[.08] rounded-[1.35rem] p-6 sm:p-7">
+        <button class="acc-btn w-full flex items-start gap-5 text-right">
+          <div class="w-12 h-12 rounded-2xl bg-gold/15 text-gold flex items-center justify-center font-display text-xl font-bold shrink-0">١</div>
+          <div class="flex-1">
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-ink">دعمُ رجال السياسة والحكام (الميسان / Mécènes)</h3>
+            <p class="text-slate2 mt-2 text-[15px] leading-[2]">
+              برزت طبقةٌ من الحكام والأمراء والأثرياء الذين وظّفوا أموالَهم الطائلة لرعاية الأدباء والفنانين والعلماء.
+            </p>
+          </div>
+          <div class="acc-icon w-9 h-9 rounded-full border border-ink/15 flex items-center justify-center text-ink shrink-0 transition-all duration-500">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="acc-panel">
+          <div class="pr-0 sm:pr-[68px]">
+            <div class="bg-parchment/60 rounded-2xl p-5 border-r-4 border-gold">
+              <div class="flex items-center gap-2 text-gold font-bold text-sm mb-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+                شاهد تاريخي
+              </div>
+              <p class="text-ink/85 leading-[2.1] text-[15px]">
+                من أبرزهم <strong>فرانسوا الأول</strong> ملك فرنسا، الذي شجّع حركة الإنسانية واستقطب كبار فناني عصره،
+                فتحوّلت بلاطاتُ الملوك إلى مراكزَ للإبداع العلمي والفني.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="acc-item reveal bg-white/70 border border-ink/[.08] rounded-[1.35rem] p-6 sm:p-7">
+        <button class="acc-btn w-full flex items-start gap-5 text-right">
+          <div class="w-12 h-12 rounded-2xl bg-teal/12 text-teal flex items-center justify-center font-display text-xl font-bold shrink-0">٢</div>
+          <div class="flex-1">
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-ink">التأثّر بالحضارات الكلاسيكية السابقة (اليونانية والرومانية)</h3>
+            <p class="text-slate2 mt-2 text-[15px] leading-[2]">
+              استلهم مفكّرو النهضة تراثَ العصر القديم القائم على إعلاء العقل البشري وقيم الحرية والجمال.
+            </p>
+          </div>
+          <div class="acc-icon w-9 h-9 rounded-full border border-ink/15 flex items-center justify-center text-ink shrink-0 transition-all duration-500">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="acc-panel">
+          <div class="pr-0 sm:pr-[68px]">
+            <div class="bg-teal/[.07] rounded-2xl p-5 border-r-4 border-teal">
+              <p class="text-ink/85 leading-[2.1] text-[15px]">
+                أُعيد اكتشاف المخطوطات القديمة، وأُعيد ترجمة مؤلَّفات أفلاطون وأرسطو وأرشميدس،
+                فتحوّلت الفلسفةُ الكلاسيكية إلى مصدرِ إلهامٍ فكريٍّ قطع مع قطيعة العصور الوسطى.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="acc-item reveal bg-white/70 border border-ink/[.08] rounded-[1.35rem] p-6 sm:p-7">
+        <button class="acc-btn w-full flex items-start gap-5 text-right">
+          <div class="w-12 h-12 rounded-2xl bg-terra/12 text-terra flex items-center justify-center font-display text-xl font-bold shrink-0">٣</div>
+          <div class="flex-1">
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-ink">تأثير التواصل الحضاري مع الحضارة العربية الإسلامية</h3>
+            <p class="text-slate2 mt-2 text-[15px] leading-[2]">
+              مثّل العالمُ الإسلامي الجسرَ الأساسي الذي عبرت عبره المعارفُ نحو أوروبا.
+            </p>
+          </div>
+          <div class="acc-icon w-9 h-9 rounded-full border border-ink/15 flex items-center justify-center text-ink shrink-0 transition-all duration-500">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="acc-panel">
+          <div class="pr-0 sm:pr-[68px]">
+            <div class="bg-terra/[.07] rounded-2xl p-5 border-r-4 border-terra">
+              <p class="text-ink/85 leading-[2.1] text-[15px]">
+                نقلت الترجماتُ العربيةُ علومَ الطبّ والفلك والرياضيات والفلسفة إلى الجامعات الأوروبية،
+                فكان للحضارة العربية الإسلامية دورٌ مركزيٌّ في تأسيس النهضة الأوروبية.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="acc-item reveal bg-white/70 border border-ink/[.08] rounded-[1.35rem] p-6 sm:p-7">
+        <button class="acc-btn w-full flex items-start gap-5 text-right">
+          <div class="w-12 h-12 rounded-2xl bg-gold/15 text-gold flex items-center justify-center font-display text-xl font-bold shrink-0">٤</div>
+          <div class="flex-1">
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-ink">دورُ الرحلات الاستكشافية وتوظيف ثروات العالم الجديد</h3>
+            <p class="text-slate2 mt-2 text-[15px] leading-[2]">
+              مثّلت الاكتشافاتُ الجغرافيةُ الكبرى منعرجاً اقتصادياً حاسماً.
+            </p>
+          </div>
+          <div class="acc-icon w-9 h-9 rounded-full border border-ink/15 flex items-center justify-center text-ink shrink-0 transition-all duration-500">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="acc-panel">
+          <div class="pr-0 sm:pr-[68px]">
+            <div class="bg-gold/[.12] rounded-2xl p-5 border-r-4 border-gold">
+              <p class="text-ink/85 leading-[2.1] text-[15px]">
+                أدّت الرحلاتُ الاستكشافية إلى اكتشاف طرقٍ تجاريةٍ جديدةٍ وتدفّق المعادن النفيسة والثروات نحو أوروبا،
+                فنمت الطبقةُ التجارية، وتقوّى رأس المال الذي مولّ حركةَ النهضة الثقافية والفنية.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="acc-item reveal bg-white/70 border border-ink/[.08] rounded-[1.35rem] p-6 sm:p-7">
+        <button class="acc-btn w-full flex items-start gap-5 text-right">
+          <div class="w-12 h-12 rounded-2xl bg-teal/12 text-teal flex items-center justify-center font-display text-xl font-bold shrink-0">٥</div>
+          <div class="flex-1">
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-ink">أهميةُ اختراع آلة الطباعة</h3>
+            <p class="text-slate2 mt-2 text-[15px] leading-[2]">
+              شكّل اختراعُ المطبعة ثورةً تواصليةً كبرى حطّمت احتكارَ الكنيسة لمعرفة القراءة والكتابة.
+            </p>
+          </div>
+          <div class="acc-icon w-9 h-9 rounded-full border border-ink/15 flex items-center justify-center text-ink shrink-0 transition-all duration-500">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </div>
+        </button>
+        <div class="acc-panel">
+          <div class="pr-0 sm:pr-[68px]">
+            <div class="bg-teal/[.07] rounded-2xl p-5 border-r-4 border-teal">
+              <p class="text-ink/85 leading-[2.1] text-[15px]">
+                أصبحت الكتبُ متوفّرةً وبأسعارٍ أقلّ، وانتشرت الأفكارُ الجديدة بسرعةٍ غير مسبوقة،
+                فارتفع مستوى المعرفة بين الناس وأصبح الإنتاجُ العلميُّ والفكريُّ في توسّعٍ مستمر.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Chart -->
+    <div class="mt-16 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="reveal">
+        <h3 class="font-display text-2xl sm:text-3xl font-bold text-ink leading-relaxed">
+          الوزن النسبيّ للعوامل في تشكيل النهضة
+          <span class="block text-slate2 text-base font-body font-normal mt-2">تمثيلٌ تربويٌّ تقريبيٌّ يهدف إلى توضيح تداخل العوامل وتكاملها</span>
+        </h3>
+        <div class="mt-7 space-y-6">
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="font-semibold text-ink/85 text-[15px]">العوامل الاقتصادية (الرحلات والتجارة)</span>
+              <span class="text-terra font-bold stat-number" data-count="28" data-suffix="%">0%</span>
+            </div>
+            <div class="bar-track h-3"><div class="bar-fill" data-width="28"></div></div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="font-semibold text-ink/85 text-[15px]">العوامل الثقافية (الكلاسيكيات والإنسانية)</span>
+              <span class="text-teal font-bold stat-number" data-count="26" data-suffix="%">0%</span>
+            </div>
+            <div class="bar-track h-3"><div class="bar-fill" data-width="26"></div></div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="font-semibold text-ink/85 text-[15px]">دعمُ الميسان والحكام</span>
+              <span class="text-gold font-bold stat-number" data-count="20" data-suffix="%">0%</span>
+            </div>
+            <div class="bar-track h-3"><div class="bar-fill" data-width="20"></div></div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="font-semibold text-ink/85 text-[15px]">اختراعُ الطباعة وانتشار المعرفة</span>
+              <span class="text-ink font-bold stat-number" data-count="16" data-suffix="%">0%</span>
+            </div>
+            <div class="bar-track h-3"><div class="bar-fill" data-width="16"></div></div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="font-semibold text-ink/85 text-[15px]">التواصل الحضاري مع الحضارة الإسلامية</span>
+              <span class="text-terraDark font-bold stat-number" data-count="10" data-suffix="%">0%</span>
+            </div>
+            <div class="bar-track h-3"><div class="bar-fill" data-width="10"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-scale relative">
+        <div class="img-mask rounded-[1.6rem] overflow-hidden shadow-2xl h-[380px] sm:h-[520px]">
+          <img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=1100&q=80" alt="كتب ومخطوطات" class="w-full h-full object-cover" onerror="this.parentElement.style.background='linear-gradient(135deg,#B4522E,#14212B)';this.style.display='none'">
+          <div class="veil"></div>
+          <div class="absolute bottom-7 right-7 left-7">
+            <div class="text-white/75 text-sm mb-2">خلاصة العنصر الأول</div>
+            <div class="text-white font-display text-xl sm:text-2xl leading-[1.9]">
+              تضافرت العواملُ السياسيةُ والاقتصاديةُ والثقافيةُ مع بعضها لتُنتج حركةَ تجديدٍ شاملة، لا يمكن تفسيرُها بعاملٍ واحد.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= TIMELINE ================= -->
+<section id="timeline" class="relative py-20 sm:py-28 bg-white overflow-hidden">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="w-10 h-[2px] bg-terra"></span>
+        <span class="text-terra font-bold tracking-[.18em] text-xs sm:text-sm">خطّ زمني</span>
+        <span class="w-10 h-[2px] bg-terra"></span>
+      </div>
+      <h2 class="font-display text-[clamp(2rem,5vw,3.15rem)] font-bold text-ink leading-[1.35]">
+        محطّاتٌ صنعت النهضة الأوروبية
+      </h2>
+      <div class="ornament-wrap mt-6 max-w-[220px] mx-auto"><div class="ornament-line"></div></div>
+    </div>
+
+    <div class="relative mt-16 pr-8 sm:pr-0">
+      <!-- track -->
+      <div class="tl-track right-[10px] sm:right-1/2 sm:translate-x-1/2"></div>
+      <div class="tl-fill right-[10px] sm:right-1/2 sm:translate-x-1/2" id="tlFill"></div>
+
+      <!-- items -->
+      <div class="space-y-12">
+
+        <div class="tl-item reveal relative sm:grid sm:grid-cols-2 sm:gap-12 items-center">
+          <div class="absolute right-[2px] sm:right-1/2 sm:translate-x-1/2 top-2 w-[19px] h-[19px] rounded-full bg-gold border-4 border-white shadow-md tl-dot"></div>
+          <div class="sm:text-left sm:pl-12">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-gold/12 text-gold font-bold text-sm mb-3">القرن 5 — 15 م</div>
+            <h3 class="font-display text-2xl font-bold text-ink">العصور الوسيطة</h3>
+            <p class="text-slate2 leading-[2.05] mt-2.5 text-[15px]">
+              جمودٌ فكريٌّ واقتصاديّ، وهيمنةٌ مطلقةٌ للكنيسة الكاثوليكية على العقول، مع نظامٍ إطباقيٍّ متخلف.
+            </p>
+          </div>
+          <div class="hidden sm:block"></div>
+        </div>
+
+        <div class="tl-item reveal relative sm:grid sm:grid-cols-2 sm:gap-12 items-center">
+          <div class="absolute right-[2px] sm:right-1/2 sm:translate-x-1/2 top-2 w-[19px] h-[19px] rounded-full bg-terra border-4 border-white shadow-md tl-dot"></div>
+          <div class="hidden sm:block"></div>
+          <div class="sm:pr-12">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-terra/12 text-terra font-bold text-sm mb-3">1455م</div>
+            <h3 class="font-display text-2xl font-bold text-ink">اختراعُ آلة الطباعة</h3>
+            <p class="text-slate2 leading-[2.05] mt-2.5 text-[15px]">
+              ثورةٌ تواصليةٌ كبرى: انتشارُ الكتاب، تراجعُ احتكار الكنيسة للمعرفة، وتسارعُ حركة الأفكار الجديدة.
+            </p>
+          </div>
+        </div>
+
+        <div class="tl-item reveal relative sm:grid sm:grid-cols-2 sm:gap-12 items-center">
+          <div class="absolute right-[2px] sm:right-1/2 sm:translate-x-1/2 top-2 w-[19px] h-[19px] rounded-full bg-teal border-4 border-white shadow-md tl-dot"></div>
+          <div class="sm:text-left sm:pl-12">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-teal/12 text-teal font-bold text-sm mb-3">نهاية القرن 15م</div>
+            <h3 class="font-display text-2xl font-bold text-ink">الرحلاتُ الاستكشافية الكبرى</h3>
+            <p class="text-slate2 leading-[2.05] mt-2.5 text-[15px]">
+              اكتشافُ طرقٍ تجاريةٍ جديدةٍ وثرواتِ العالم الجديد، ونموُّ الطبقة التجارية ورأس المال الأوربي.
+            </p>
+          </div>
+          <div class="hidden sm:block"></div>
+        </div>
+
+        <div class="tl-item reveal relative sm:grid sm:grid-cols-2 sm:gap-12 items-center">
+          <div class="absolute right-[2px] sm:right-1/2 sm:translate-x-1/2 top-2 w-[19px] h-[19px] rounded-full bg-gold border-4 border-white shadow-md tl-dot"></div>
+          <div class="hidden sm:block"></div>
+          <div class="sm:pr-12">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-gold/12 text-gold font-bold text-sm mb-3">القرن 16م</div>
+            <h3 class="font-display text-2xl font-bold text-ink">ازدهارُ الحركة الإنسانية والفنون</h3>
+            <p class="text-slate2 leading-[2.05] mt-2.5 text-[15px]">
+              الإنسانُ في مركز الاهتمام، وإحياءُ التراث الكلاسيكي، وتحوّل الفنون والعمارة نحو الجمال والواقعية.
+            </p>
+          </div>
+        </div>
+
+        <div class="tl-item reveal relative sm:grid sm:grid-cols-2 sm:gap-12 items-center">
+          <div class="absolute right-[2px] sm:right-1/2 sm:translate-x-1/2 top-2 w-[19px] h-[19px] rounded-full bg-terra border-4 border-white shadow-md tl-dot"></div>
+          <div class="sm:text-left sm:pl-12">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-terra/12 text-terra font-bold text-sm mb-3">1517م وما بعدها</div>
+            <h3 class="font-display text-2xl font-bold text-ink">الثورةُ الدينية (الإصلاح الديني)</h3>
+            <p class="text-slate2 leading-[2.05] mt-2.5 text-[15px]">
+              انتقادُ ممارسات الكنيسة الكاثوليكية، وظهورُ التيار البروتستانتي وانقسامُ المشهد الديني الأوروبي.
+            </p>
+          </div>
+          <div class="hidden sm:block"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section id="features" class="relative py-20 sm:py-28 bg-cream overflow-hidden">
+  <div class="orb w-[380px] h-[380px] bg-[#14564E] top-[-120px] right-[-110px] opacity-[.16]"></div>
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+    <div class="max-w-3xl reveal">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-10 h-[2px] bg-terra"></span>
+        <span class="text-terra font-bold tracking-[.18em] text-xs sm:text-sm">العنصر الثاني</span>
+      </div>
+      <h2 class="font-display text-[clamp(2rem,5vw,3.35rem)] font-bold text-ink leading-[1.35]">
+        مظاهرُ النهضة الأوروبية
+      </h2>
+      <div class="ornament-wrap mt-6 max-w-md"><div class="ornament-line"></div></div>
+      <p class="mt-6 text-slate2 text-lg leading-[2.15]">
+        تجسّم التغييرُ الشاملُ للنهضة الأوروبية في قطاعاتٍ حيويةٍ متعدّدة مست الفنَّ والفكرَ والعلمَ والدين.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-14">
+
+      <!-- Feature 1 -->
+      <article class="reveal card-lift group bg-white rounded-[1.5rem] overflow-hidden border border-ink/[.07] shadow-[0_22px_55px_-32px_rgba(20,33,43,.5)]">
+        <div class="img-mask h-[210px]">
+          <img src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?auto=format&fit=crop&w=900&q=80" alt="فن النهضة" class="w-full h-full object-cover" onerror="this.parentElement.style.background='linear-gradient(135deg,#B4522E,#8E3C21)';this.style.display='none'">
+          <div class="veil opacity-70"></div>
+          <div class="absolute top-4 right-4 px-3.5 py-1.5 rounded-full bg-white/90 text-ink text-xs font-bold">الفن</div>
+        </div>
+        <div class="p-7">
+          <h3 class="font-display text-2xl font-bold text-ink mb-3">النهضةُ الفنية</h3>
+          <p class="text-slate2 leading-[2.1] text-[15px]">
+            تحرّر الفنُّ من القيود الدينية الصارمة، وظهرت اللوحةُ المنظورية والتشريحُ الدقيق للجسم البشري،
+            وازدهرت العمارةُ الكلاسيكية والنحتُ والموسيقى، فصار الفنُّ تعبيراً عن الإنسان وجماله.
+          </p>
+        </div>
+      </article>
+
+      <!-- Feature 2 -->
+      <article class="reveal card-lift group bg-white rounded-[1.5rem] overflow-hidden border border-ink/[.07] shadow-[0_22px_55px_-32px_rgba(20,33,43,.5)]">
+        <div class="img-mask h-[210px]">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80" alt="الكتب والفكر" class="w-full h-full object-cover" onerror="this.parentElement.style.background='linear-gradient(135deg,#14564E,#14212B)';this.style.display='none'">
+          <div class="veil opacity-70"></div>
+          <div class="absolute top-4 right-4 px-3.5 py-1.5 rounded-full bg-white/90 text-ink text-xs font-bold">الفكر</div>
+        </div>
+        <div class="p-7">
+          <h3 class="font-display text-2xl font-bold text-ink mb-3">النهضةُ الفكرية (الحركة الإنسانية)</h3>
+          <p class="text-slate2 leading-[2.1] text-[15px]">
+            ظهر تيارٌ فكريٌّ جديدٌ يُعنى بالإنسان، فيُعلّق من قيمة العقل والعلم والأدب،
+            ويدعو إلى الحرية والبحث عن الحقيقة بعيداً عن التفسير الديني المطلق للعالم.
+          </p>
+        </div>
+      </article>
+
+      <!-- Feature 3 -->
+      <article class="reveal card-lift group bg-white rounded-[1.5rem] overflow-hidden border border-ink/[.07] shadow-[0_22px_55px_-32px_rgba(20,33,43,.5)]">
+        <div class="img-mask h-[210px]">
+          <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=900&q=80" alt="العلم والطب" class="w-full h-full object-cover" onerror="this.parentElement.style.background='linear-gradient(135deg,#C4932F,#8E3C21)';this.style.display='none'">
+          <div class="veil opacity-70"></div>
+          <div class="absolute top-4 right-4 px-3.5 py-1.5 rounded-full bg-white/90 text-ink text-xs font-bold">العلم</div>
+        </div>
+        <div class="p-7">
+          <h3 class="font-display text-2xl font-bold text-ink mb-3">تطوّرُ الطبّ والجراحة</h3>
+          <p class="text-slate2 leading-[2.1] text-[15px]">
+            شهد العلمُ قطيعةً مع الطبّ التقليدي: الاعتمادُ على الملاحظة والتشريح والتجربة،
+            وتطوّرت الجراحةُ والأدواتُ الطبية، وأصبحت المعرفةُ العلميةُ مبنيةً على الدليل لا على السلطة.
+          </p>
+        </div>
+      </article>
+
+      <!-- Feature 4 -->
+      <article class="reveal card-lift group bg-white rounded-[1.5rem] overflow-hidden border border-ink/[.07] shadow-[0_22px_55px_-32px_rgba(20,33,43,.5)]">
+        <div class="img-mask h-[210px]">
+          <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=900&q=80" alt="الكون والنجوم" class="w-full h-full object-cover" onerror="this.parentElement.style.background='linear-gradient(135deg,#14212B,#14564E)';this.style.display='none'">
+          <div class="veil opacity-70"></div>
+          <div class="absolute top-4 right-4 px-3.5 py-1.5 rounded-full bg-white/90 text-ink text-xs font-bold">الفلك</div>
+        </div>
+        <div class="p-7">
+          <h3 class="font-display text-2xl font-bold text-ink mb-3">نظريةُ كوبرنيك</h3>
+          <p class="text-slate2 leading-[2.1] text-[15px]">
+            أثبت كوبرنيكُ بطلانَ فكرة الكنيسة القائلة بأنّ الأرضَ مركزُ الكون،
+            فأسّس للنظرية الشمسية (المركزية الشمسية)، وفتح البابَ أمام ثورةٍ علميةٍ كاملة في الفيزياء والفلك.
+          </p>
+        </div>
+      </article>
+
+      <!-- Feature 5 -->
+      <article class="reveal card-lift group bg-white rounded-[1.5rem] overflow-hidden border border-ink/[.07] shadow-[0_22px_55px_-32px_rgba(20,33,43,.5)]">
+        <div class="img-mask h-[210px]">
+          <img src="https://images.unsplash.com/photo-1548407260-da850faa41e3?auto=format&fit=crop&w=900&q=80" alt="الكنيسة والعمارة" class="w-full h-full object-cover" onerror="this.parentElement.style.background='linear-gradient(135deg,#7C2F2A,#14212B)';this.style.display='none'">
+          <div class="veil opacity-70"></div>
+          <div class="absolute top-4 right-4 px-3.5 py-1.5 rounded-full bg-white/90 text-ink text-xs font-bold">الدين</div>
+        </div>
+        <div class="p-7">
+          <h3 class="font-display text-2xl font-bold text-ink mb-3">الثورةُ الدينية (الإصلاح الديني)</h3>
+          <p class="text-slate2 leading-[2.1] text-[15px]">
+            انتقد المصلِّحونَ ممارساتَ الكنيسة الكاثوليكية وبيعَ الصكوك والاعترافات،
+            فظهر التيارُ البروتستانتي وتعدّدت الكنائس، في تحوّلٍ عظيمٍ للمشهد الديني والسياسي الأوروبي.
+          </p>
+        </div>
+      </article>
+
+      <!-- Feature 6 -->
+      <article class="reveal card-lift group bg-ink text-white rounded-[1.5rem] overflow-hidden relative">
+        <div class="absolute inset-0 opacity-25">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'">
+          <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/40"></div>
+        </div>
+        <div class="relative p-7 h-full flex flex-col justify-between min-h-[380px]">
+          <div>
+            <div class="inline-block px-3.5 py-1.5 rounded-full bg-white/12 text-white/85 text-xs font-bold mb-6">الخلاصة</div>
+            <h3 class="font-display text-2xl font-bold mb-4 leading-[1.7]">
+              قطيعةٌ شاملةٌ مع العصور الوسطى
+            </h3>
+            <p class="text-white/72 leading-[2.15] text-[15px]">
+              لم تكن النهضةُ الأوروبية مجرّدَ تجديدٍ في الفنّ أو العلم،
+              بل كانت تحوّلاً في نظرة الإنسان إلى نفسه وإلى العالم:
+              من عالمٍ يُفسَّر بالسلطة الدينية… إلى عالمٍ يُفسَّر بالعقل والتجربة.
+            </p>
+          </div>
+          <a href="#quiz" class="magnetic inline-flex items-center gap-2.5 mt-8 px-6 py-3.5 rounded-full bg-white text-ink font-bold text-sm hover:bg-gold hover:text-white transition-colors self-start">
+            اختبر فهمك للمظاهر
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M19 12H5M11 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUIZ ================= -->
+<section id="quiz" class="relative py-20 sm:py-28 bg-ink text-white overflow-hidden">
+  <div class="absolute inset-0 opacity-[.12]">
+    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1800&q=80" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'">
+  </div>
+  <div class="grain"></div>
+  <div class="orb w-[340px] h-[340px] bg-[#B4522E] top-[-100px] left-[-90px] opacity-30"></div>
+
+  <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center reveal">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="w-10 h-[2px] bg-gold"></span>
+        <span class="text-gold font-bold tracking-[.18em] text-xs sm:text-sm">تقويمٌ تكويني</span>
+        <span class="w-10 h-[2px] bg-gold"></span>
+      </div>
+      <h2 class="font-display text-[clamp(2rem,5vw,3.15rem)] font-bold leading-[1.35]">
+        اختبر معلوماتك في درس النهضة
+      </h2>
+      <p class="mt-5 text-white/70 text-lg leading-[2.1]">
+        اختر الإجابة الصحيحة، وستظهر لك النتيجة مباشرةً.
+      </p>
+    </div>
+
+    <div class="mt-12 space-y-6">
+
+      <!-- Q1 -->
+      <div class="reveal bg-white/[.06] border border-white/12 rounded-[1.35rem] p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-9 h-9 rounded-full bg-gold text-ink font-bold flex items-center justify-center shrink-0">1</div>
+          <h3 class="font-display text-xl sm:text-2xl font-bold leading-[1.85]">
+            ما المقصود بـ «الميسان» في سياق النهضة الأوروبية؟
+          </h3>
+        </div>
+        <div class="mt-6 space-y-3">
+          <div class="quiz-opt border border-white/15 rounded-2xl px-5 py-4 text-white/85 text-[15px]" data-correct="false">
+            العلماءُ الذين اكتشفوا نظرية المركزية الشمسية.
+          </div>
+          <div class="quiz-opt border border-white/15 rounded-2xl px-5 py-4 text-white/85 text-[15px]" data-correct="true">
+            الحكّامُ والأمراءُ والأثرياء الذين رعَوا الأدباء والفنانين والعلماء بأموالهم.
+          </div>
+          <div class="quiz-opt border border-white/15 rounded-2xl px-5 py-4 text-white/85 text-[15px]" data-correct="false">
+            الرهبانُ الذين نسخوا المخطوطات في العصور الوسيطة.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="reveal bg-white/[.06] border border-white/12 rounded-[1.35rem] p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-9 h-9 rounded-full bg-gold text-ink font-bold flex items-center justify-center shrink-0">2</div>
+          <h3 class="font-display text-xl sm:text-2xl font-bold leading-[1.85]">
+            أيُّ العوامل الآتية مثّل «الجسرَ» الذي عبرت عبره المعارفُ نحو أوروبا؟
+          </h3>
+        </div>
+        <div class="mt-6 space-y-3">
+          <div class="quiz-opt border border-white/15 rounded-2xl px-5 py-4 text-white/85 text-[15px]" data-correct="false">
+            الرحلاتُ الاستكشافية نحو الأمريكتين.
+          </div>
+          <div class="quiz-opt border border-white/15 rounded-2xl px-5 py-4 text-white/85 text-[15px]" data-correct="true">
+            التواصلُ الحضاريُّ مع الحضارة العربية الإسلامية.
+          </div>
+          <div class="quiz-opt border border-white/15 rounded-2xl px-5 py-4 text-white/85 text-[15px]" data-correct="false">
+            النظامُ الإطباقيُّ في أوروبا الوسطى.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="reveal bg-white/[.06] border border-white/12 rounded-[1.35rem] p-6 sm:p-8">
+        <div class="flex items-start gap-4">
+          <div class="w-9 h-9 rounded-full bg-gold text-ink font-bold flex items-center justify-center shrink-0">3</div>
+          <h3 class="font-display text-xl sm:text-2xl font-bold leading-[1.85]">
+            ما الأثرُ الأساسيُّ لاختراع آلة الطباعة في النهضة الأوروبية؟
+          </h3>
+        </div>
+        <div class="mt-6 space-y-3">
+          <div class="quiz-opt border border-white/15 rounded-2xl px-5 py-4 text-white/85 text-[15px]" data-correct="false">
+            تعزيزُ احتكار الكنيسة للقراءة والكتابة.
+          </div>
+          <div class="quiz-opt border border-white/15 rounded-2xl px-5 py-4 text-white/85 text-[15px]" data-correct="false">
+            تراجعُ مستوى المعرفة بين الناس.
+          </div>
+          <div class="quiz-opt border border-white/15 rounded-2xl px-5 py-4 text-white/85 text-[15px]" data-correct="true">
+            تسريعُ انتشار المعرفة والأفكار الجديدة وحطّمت احتكارَ الكنيسة لها.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-10 text-center">
+      <div id="quizScore" class="inline-flex items-center gap-3 px-7 py-4 rounded-full bg-white/[.08] border border-white/12">
+        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8L12 3z" stroke-linejoin="round"/>
+        </svg>
+        <span class="text-white/85 font-medium">النتيجة: <strong id="scoreValue" class="text-gold">0</strong> / 3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONCLUSION ================= -->
+<section id="conclusion" class="relative py-20 sm:py-28 bg-white overflow-hidden">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+      <div>
+        <div class="reveal flex items-center gap-3 mb-4">
+          <span class="w-10 h-[2px] bg-terra"></span>
+          <span class="text-terra font-bold tracking-[.18em] text-xs sm:text-sm">الخاتمة</span>
+        </div>
+
+        <h2 class="reveal font-display text-[clamp(2rem,5vw,3.35rem)] font-bold text-ink leading-[1.4]">
+          النهضةُ الأوروبية: منعرجٌ حاسمٌ في تاريخ الإنسانية
+        </h2>
+
+        <p class="reveal mt-6 text-slate2 text-[17px] leading-[2.25]">
+          مثّلت النهضةُ الأوروبيةُ خلال القرنَي 15 و16 ميلادي منعرجاً حاسماً في تاريخ الإنسانية.
+          فقد تحرّر الإنسانُ من هيمنة الفكر الجامد، وأعاد اكتشاف قيمةِ العقل والعلم والجمال،
+          وأسّس لمنظومةٍ حديثةٍ في الفنّ والثقافة والاقتصاد والسياسة.
+        </p>
+
+        <p class="reveal mt-5 text-slate2 text-[17px] leading-[2.25]">
+          ولم تكن هذه النهضةُ وليدةَ عاملٍ واحد، بل ناتجُ تضافرِ عواملَ اقتصاديةٍ (الرحلات والتجارة)،
+          وسياسيةٍ (دعمُ الميسان)، وثقافيةٍ (إحياءُ الكلاسيكيات والطباعة والتواصل الحضاري)،
+          في تجربةٍ تُعلّمنا أنّ تجدّدَ الأمم يبدأ من تجدّد الفكر ومن الاهتمام بالإنسان وبالعلم.
+        </p>
+
+        <!-- key takeaways -->
+        <div class="mt-9 space-y-4">
+          <div class="reveal flex items-start gap-4 p-4 rounded-2xl bg-cream border border-ink/[.06]">
+            <div class="w-10 h-10 rounded-xl bg-terra/12 text-terra flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="text-ink/85 leading-[2] text-[15px]">
+              <strong>فكرةٌ مفتاحية:</strong> النهضةُ حركةُ تجديدٍ شاملة مست الفكرَ والفنَّ والدينَ والعلم معاً.
+            </p>
+          </div>
+          <div class="reveal flex items-start gap-4 p-4 rounded-2xl bg-cream border border-ink/[.06]">
+            <div class="w-10 h-10 rounded-xl bg-teal/12 text-teal flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="text-ink/85 leading-[2] text-[15px]">
+              <strong>علاقةٌ سببية:</strong> اختراعُ الطباعة ← انتشارُ المعرفة ← تراجعُ السلطة الفكرية للكنيسة.
+            </p>
+          </div>
+          <div class="reveal flex items-start gap-4 p-4 rounded-2xl bg-cream border border-ink/[.06]">
+            <div class="w-10 h-10 rounded-xl bg-gold/15 text-gold flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="text-ink/85 leading-[2] text-[15px]">
+              <strong>قيمةٌ تربوية:</strong> الحوارُ الحضاريُّ والانفتاحُ المثمر شرطُ كلِّ نهضةٍ حقيقية.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- image + card -->
+      <div class="relative">
+        <div class="img-mask reveal rounded-[1.75rem] overflow-hidden shadow-2xl h-[420px] sm:h-[580px]">
+          <img src="https://images.unsplash.com/photo-1520637836862-4d197d17c50a?auto=format&fit=crop&w=1100&q=80" alt="تمثال وفن النهضة" class="parallax-img w-full h-full object-cover" data-speed="0.05" onerror="this.parentElement.style.background='linear-gradient(135deg,#B4522E,#14212B)';this.style.display='none'">
+          <div class="veil"></div>
+        </div>
+
+        <div class="reveal-scale absolute bottom-6 right-6 left-6 bg-white/95 rounded-[1.35rem] p-6 shadow-2xl border border-white">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-terra/12 text-terra flex items-center justify-center">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3l9 4.5-9 4.5-9-4.5L12 3z" stroke-linejoin="round"/>
+                <path d="M6 10v4c0 1.7 2.7 3 6 3s6-1.3 6-3v-4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="font-display text-lg font-bold text-ink">خلاصة الدرس في سطر</div>
+          </div>
+          <p class="text-ink/80 leading-[2.1] text-[15px]">
+            عواملُ متداخلة (اقتصادية، سياسية، ثقافية) + تجديدٌ شامل (فنّ، فكر، علم، دين)
+            = ولادةُ الحداثة الأوروبية.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA / FOOTER ================= -->
+<footer class="relative bg-ink text-white overflow-hidden">
+  <div class="absolute inset-0 opacity-[.10]">
+    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1800&q=80" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'">
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/95 to-ink/85"></div>
+  </div>
+  <div class="grain"></div>
+
+  <!-- CTA band -->
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+    <div class="reveal rounded-[1.75rem] bg-gradient-to-l from-terra via-terraDark to-[#6E2C19] p-9 sm:p-12 shadow-2xl relative overflow-hidden">
+      <div class="absolute -left-16 -top-16 w-64 h-64 rounded-full bg-white/10 blur-2xl"></div>
+      <div class="absolute -right-10 -bottom-20 w-72 h-72 rounded-full bg-gold/20 blur-3xl"></div>
+      <div class="relative flex flex-col lg:flex-row items-start lg:items-center gap-8 justify-between">
+        <div>
+          <h3 class="font-display text-[clamp(1.75rem,3.6vw,2.65rem)] font-bold leading-[1.55]">
+            ورقةُ عملٍ صفّية: حضّر إجابتك حول إشكالية الدرس
+          </h3>
+          <p class="mt-4 text-white/80 text-[16px] leading-[2.1] max-w-2xl">
+            العواملُ التي أدّت إلى ظهور النهضة الأوروبية + أبرزُ مظاهرها الفكرية والعلمية والدينية
+            التي قطعت مع العصور الوسطى.
+          </p>
+        </div>
+        <a href="#hero" class="magnetic inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-terraDark font-bold text-[15px] shadow-xl hover:shadow-2xl whitespace-nowrap">
+          العودة إلى بداية الدرس
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer grid -->
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="grid gap-10 md:grid-cols-3 border-t border-white/10 pt-12">
+
+      <div>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-gold to-terra flex items-center justify-center">
+            <svg viewBox="0 0 40 40" class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="20" cy="20" r="12" opacity=".55"/>
+              <path d="M20 6v28M6 20h28" stroke-linecap="round" opacity=".85"/>
+              <path d="M20 12l4 8-4 8-4-8z" fill="currentColor" stroke="none" opacity=".95"/>
+            </svg>
+          </div>
+          <div>
+            <div class="font-display text-xl font-bold">النهضة الأوروبية</div>
+            <div class="text-white/55 text-xs">درسٌ تفاعليٌّ في مادة التاريخ</div>
+          </div>
+        </div>
+        <p class="text-white/60 leading-[2.15] text-[14px]">
+          موردٌ بيداغوجيٌّ رقميٌّ يدعم التدريسَ الحضوريَّ عن بُعد،
+          ويجمع بين الشرح المنظّم والأنشطة التفاعلية والتقويم التكويني.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-display text-lg font-bold mb-5">محاور الدرس</h4>
+        <ul class="space-y-3">
+          <li><a href="#objectives" class="text-white/60 hover:text-gold transition-colors text-[14px] flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold/70"></span>الأهداف المعرفية والمهارية والسلوكية</a></li>
+          <li><a href="#intro" class="text-white/60 hover:text-gold transition-colors text-[14px] flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold/70"></span>المقدمة والإشكالية البيداغوجية</a></li>
+          <li><a href="#concepts" class="text-white/60 hover:text-gold transition-colors text-[14px] flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold/70"></span>شرح المفاهيم الأساسية</a></li>
+          <li><a href="#factors" class="text-white/60 hover:text-gold transition-colors text-[14px] flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold/70"></span>عوامل ظهور النهضة الأوروبية</a></li>
+          <li><a href="#features" class="text-white/60 hover:text-gold transition-colors text-[14px] flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold/70"></span>مظاهر النهضة الفكرية والعلمية والدينية</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display text-lg font-bold mb-5">بطاقة الدرس</h4>
+        <div class="space-y-3.5">
+          <div class="flex items-center justify-between bg-white/[.06] rounded-xl px-4 py-3 border border-white/10">
+            <span class="text-white/55 text-[13px]">المستوى</span>
+            <span class="text-white font-semibold text-[14px]">الثامنة أساسي</span>
+          </div>
+          <div class="flex items-center justify-between bg-white/[.06] rounded-xl px-4 py-3 border border-white/10">
+            <span class="text-white/55 text-[13px]">المادة</span>
+            <span class="text-white font-semibold text-[14px]">التاريخ</span>
+          </div>
+          <div class="flex items-center justify-between bg-white/[.06] rounded-xl px-4 py-3 border border-white/10">
+            <span class="text-white/55 text-[13px]">السنة الدراسية</span>
+            <span class="text-white font-semibold text-[14px]">2026 / 2027</span>
+          </div>
+          <div class="flex items-center justify-between bg-white/[.06] rounded-xl px-4 py-3 border border-white/10">
+            <span class="text-white/55 text-[13px]">الإعداد</span>
+            <span class="text-white font-semibold text-[14px]">الأستاذ رياض سليمي</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- path drawing divider -->
+    <svg class="path-draw w-full h-16 mt-10 opacity-40" viewBox="0 0 1200 60" fill="none" preserveAspectRatio="none">
+      <path d="M0 40 C 150 10, 300 10, 450 40 S 750 70, 900 40 S 1100 10, 1200 30" stroke="url(#g1)" stroke-width="2"/>
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0%" stop-color="#C4932F" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#C4932F"/>
+          <stop offset="100%" stop-color="#B4522E" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10">
+      <p class="text-white/50 text-[13px] text-center sm:text-right">
+        © 2026 — درس النهضة الأوروبية • إعداد الأستاذ رياض سليمي • وفق برنامج مادة التاريخ بوزارة التربية بالجمهورية التونسية.
+      </p>
+      <div class="flex items-center gap-3">
+        <a href="#hero" class="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/65 hover:text-white hover:border-gold hover:bg-gold/15 transition-all" aria-label="أعلى الصفحة">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Hero kinetic type ---------- */
+  window.addEventListener('load', function () {
+    document.body.classList.add('loaded');
+  });
+  // fallback in case load fires late
+  setTimeout(function () { document.body.classList.add('loaded'); }, 700);
+
+  /* ---------- Scroll progress + header ---------- */
+  var progressBar = document.getElementById('progressBar');
+  var header = document.getElementById('siteHeader');
+  var ticking = false;
+
+  function onScroll() {
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? (st / docH) * 100 : 0;
+    if (progressBar) progressBar.style.width = pct + '%';
+
+    if (header) {
+      if (st > 40) {
+        header.classList.add('bg-white/92', 'shadow-[0_10px_36px_-18px_rgba(20,33,43,.35)]', 'backdrop-blur-md');
+      } else {
+        header.classList.remove('bg-white/92', 'shadow-[0_10px_36px_-18px_rgba(20,33,43,.35)]', 'backdrop-blur-md');
+      }
+    }
+
+    // parallax images
+    if (!prefersReduced) {
+      var imgs = document.querySelectorAll('.parallax-img');
+      for (var i = 0; i < imgs.length; i++) {
+        var el = imgs[i];
+        var rect = el.getBoundingClientRect();
+        if (rect.bottom > -200 && rect.top < window.innerHeight + 200) {
+          var speed = parseFloat(el.getAttribute('data-speed') || '0.1');
+          var offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * speed * -1;
+          el.style.transform = 'translate3d(0,' + offset.toFixed(2) + 'px,0) scale(1.12)';
+        }
+      }
+    }
+
+    // timeline fill
+    var tlFill = document.getElementById('tlFill');
+    var tlSection = document.getElementById('timeline');
+    if (tlFill && tlSection) {
+      var r = tlSection.getBoundingClientRect();
+      var total = r.height;
+      var passed = window.innerHeight * 0.55 - r.top;
+      var h = Math.max(0, Math.min(100, (passed / total) * 100));
+      tlFill.style.height = h + '%';
+    }
+
+    // nav active state
+    updateActiveNav(st);
+
+    ticking = false;
+  }
+
+  function requestTick() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(onScroll);
+    }
+  }
+
+  window.addEventListener('scroll', requestTick, { passive: true });
+  window.addEventListener('resize', requestTick);
+
+  /* ---------- Reveal on scroll ---------- */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-right, .reveal-left, .reveal-scale, .img-mask, .ornament-wrap, .path-draw');
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          el.classList.add('in');
+
+          // stagger siblings
+          if (el.classList.contains('reveal') || el.classList.contains('reveal-scale') ||
+              el.classList.contains('reveal-left') || el.classList.contains('reveal-right')) {
+            var parent = el.parentElement;
+            if (parent) {
+              var siblings = Array.prototype.filter.call(parent.children, function (c) {
+                return c.classList && (c.classList.contains('reveal') ||
+                  c.classList.contains('reveal-scale') ||
+                  c.classList.contains('reveal-left') ||
+                  c.classList.contains('reveal-right'));
+              });
+              var idx = siblings.indexOf(el);
+              if (idx > -1 && idx < 12) {
+                el.style.transitionDelay = (idx * 0.09) + 's';
+              }
+            }
+          }
+
+          // counters
+          if (el.querySelector && el.querySelector('[data-count]')) {
+            animateCountersIn(el);
+          }
+          if (el.hasAttribute && el.hasAttribute('data-count')) {
+            animateCounter(el);
+          }
+
+          // bars
+          if (el.querySelector && el.querySelector('.bar-fill')) {
+            var bars = el.querySelectorAll('.bar-fill');
+            bars.forEach(function (b, i) {
+              setTimeout(function () {
+                b.style.width = b.getAttribute('data-width') + '%';
+              }, i * 140);
+            });
+          }
+
+          io.unobserve(el);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -60px 0px'
+    });
+
+    revealEls.forEach(function (el) { io.observe(el); });
+
+    // observe counters and bars containers separately
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      io.observe(el);
+    });
+    document.querySelectorAll('.bar-fill').forEach(function (el) {
+      io.observe(el);
+    });
+
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- Counters ---------- */
+  function animateCounter(el) {
+    if (el.dataset.animated === 'true') return;
+    el.dataset.animated = 'true';
+
+    var target = parseFloat(el.getAttribute('data-count') || '0');
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 1500;
+    var startTime = null;
+
+    if (prefersReduced) {
+      el.textContent = target + suffix;
+      return;
+    }
+
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var val = Math.round(target * eased);
+      el.textContent = val + suffix;
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        el.textContent = target + suffix;
+      }
+    }
+    window.requestAnimationFrame(step);
+  }
+
+  function animateCountersIn(container) {
+    var counters = container.querySelectorAll('[data-count]');
+    counters.forEach(function (c) { animateCounter(c); });
+  }
+
+  // bar-fill observer fallback
+  if ('IntersectionObserver' in window) {
+    var barObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var b = e.target;
+          setTimeout(function () {
+            b.style.width = b.getAttribute('data-width') + '%';
+          }, 120);
+          barObserver.unobserve(b);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.bar-fill').forEach(function (b) { barObserver.observe(b); });
+  } else {
+    document.querySelectorAll('.bar-fill').forEach(function (b) {
+      b.style.width = b.getAttribute('data-width') + '%';
+    });
+  }
+
+  /* ---------- Mobile menu ---------- */
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function () {
+      mobileMenu.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+  }
+
+  /* ---------- Accordion ---------- */
+  var accButtons = document.querySelectorAll('.acc-btn');
+  accButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.acc-item');
+      var isOpen = item.classList.contains('open');
+
+      // close others
+      document.querySelectorAll('.acc-item.open').forEach(function (openItem) {
+        if (openItem !== item) openItem.classList.remove('open');
+      });
+
+      if (isOpen) {
+        item.classList.remove('open');
+      } else {
+        item.classList.add('open');
+      }
+    });
+  });
+
+  // open first accordion by default
+  var firstAcc = document.querySelector('.acc-item');
+  if (firstAcc) {
+    setTimeout(function () {
+      firstAcc.classList.add('open');
+    }, 900);
+  }
+
+  /* ---------- Flip cards (touch) ---------- */
+  document.querySelectorAll('.flip').forEach(function (card) {
+    card.addEventListener('click', function () {
+      card.classList.toggle('flipped');
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.classList.toggle('flipped');
+      }
+    });
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+  });
+
+  /* ---------- Quiz ---------- */
+  var scoreValue = document.getElementById('scoreValue');
+  var answered = {};
+
+  document.querySelectorAll('.quiz-opt').forEach(function (opt, index) {
+    opt.addEventListener('click', function () {
+      var questionBlock = opt.closest('.bg-white\\/\\[\\.06\\]') || opt.parentElement.parentElement;
+      var questionId = Array.prototype.indexOf.call(
+        document.querySelectorAll('#quiz .bg-white\\/\\[\\.06\\]'),
+        questionBlock
+      );
+
+      if (answered[questionId]) return;
+      answered[questionId] = true;
+
+      var isCorrect = opt.getAttribute('data-correct') === 'true';
+
+      // mark all options in this question
+      var options = questionBlock.querySelectorAll('.quiz-opt');
+      options.forEach(function (o) {
+        if (o.getAttribute('data-correct') === 'true') {
+          o.classList.add('correct');
+        }
+      });
+
+      if (!isCorrect) {
+        opt.classList.add('wrong');
+      } else {
+        // increment score
+        if (scoreValue) {
+          var current = parseInt(scoreValue.textContent, 10) || 0;
+          scoreValue.textContent = current + 1;
+          scoreValue.animate(
+            [{ transform: 'scale(1)' }, { transform: 'scale(1.35)', color: '#8FD4C8' }, { transform: 'scale(1)' }],
+            { duration: 520, easing: 'cubic-bezier(.22,1,.36,1)' }
+          );
+        }
+      }
+    });
+  });
+
+  /* ---------- Magnetic buttons ---------- */
+  if (!prefersReduced && window.matchMedia('(hover:hover)').matches) {
+    document.querySelectorAll('.magnetic').forEach(function (btn) {
+      btn.addEventListener('mousemove', function (e) {
+        var rect = btn.getBoundingClientRect();
+        var x = e.clientX - rect.left - rect.width / 2;
+        var y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = 'translate(' + (x * 0.18).toFixed(2) + 'px,' + (y * 0.22).toFixed(2) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function () {
+        btn.style.transform = 'translate(0,0)';
+      });
+    });
+  }
+
+  /* ---------- Hero cursor glow ---------- */
+  var hero = document.getElementById('hero');
+  if (hero && !prefersReduced && window.matchMedia('(hover:hover)').matches) {
+    hero.addEventListener('mousemove', function (e) {
+      var rect = hero.getBoundingClientRect();
+      var x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+      var y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+      hero.style.backgroundImage =
+        'radial-gradient(620px circle at ' + x + '% ' + y + '%, rgba(196,147,47,.16), transparent 62%)';
+    });
+    hero.addEventListener('mouseleave', function () {
+      hero.style.backgroundImage = 'none';
+    });
+  }
+
+  /* ---------- Smooth anchor offset for fixed header ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var id = anchor.getAttribute('href');
+      if (!id || id === '#' || id.length < 2) return;
+
+      var target = document.querySelector(id);
+      if (!target) return;
+
+      e.preventDefault();
+
+      var headerOffset = 82;
+      var elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      var offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: prefersReduced ? 'auto' : 'smooth'
+      });
+    });
+  });
+
+  /* ---------- Active nav highlighting ---------- */
+  var sectionIds = ['objectives', 'intro', 'concepts', 'factors', 'timeline', 'features'];
+  function updateActiveNav(scrollTop) {
+    var current = '';
+    sectionIds.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top <= 140 && rect.bottom > 160) {
+          current = id;
+        }
+      }
+    });
+
+    document.querySelectorAll('.nav-link').forEach(function (link) {
+      var href = link.getAttribute('href') || '';
+      if (href === '#' + current) {
+        link.classList.add('active', 'text-terra');
+        link.classList.remove('text-ink/80');
+      } else {
+        link.classList.remove('active', 'text-terra');
+        link.classList.add('text-ink/80');
+      }
+    });
+  }
+
+  // initial call
+  onScroll();
+
+})();
+</script>
+
+</body>
+                                                                                            </html>
